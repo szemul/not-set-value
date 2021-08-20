@@ -26,6 +26,13 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
+    - name: Save vendor as an artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: vendor
+        path: vendor
+
+
   composer-validate:
     runs-on: ubuntu-latest
 
@@ -42,6 +49,13 @@ jobs:
     needs: build
 
     steps:
+    - uses: actions/checkout@v2
+
+    - name: Download vendor dir
+      uses: actions/download-artifact@v2
+      with:
+        name: vendor
+
     - name: Check formatting
       run: vendor/bin/php-cs-fixer fix --dry-run
 
@@ -51,5 +65,12 @@ jobs:
     needs: build
 
     steps:
+    - uses: actions/checkout@v2
+
+    - name: Download vendor dir
+      uses: actions/download-artifact@v2
+      with:
+        name: vendor
+
     - name: PHPStan analysys
       run: vendor/bin/phpstan analyze --memory-limit=-1 src
