@@ -3,16 +3,14 @@ declare(strict_types=1);
 
 namespace Szemul\NotSetValue;
 
-use JsonSerializable;
-
-class NotSetValue implements JsonSerializable
+class NotSetValue implements NotSetValueInterface
 {
     public function jsonSerialize()
     {
         return null;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return '';
     }
