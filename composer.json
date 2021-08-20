@@ -1,0 +1,21 @@
+{
+    "name": "szemul/not-set-value",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.2|^8.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0.0",
+        "phpstan/phpstan": "^0.12.80"
+    },
+    "autoload": {
+        "psr-4": {
+            "Szemul\\NotSetValue\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}
