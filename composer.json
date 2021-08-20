@@ -1,5 +1,6 @@
 {
     "name": "szemul/not-set-value",
+    "description": "Simple package to represent a value that has not been set",
     "license": "MIT",
     "minimum-stability": "stable",
     "require": {
