@@ -5,7 +5,7 @@ namespace Szemul\NotSetValue;
 
 class NotSetValue implements NotSetValueInterface
 {
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return null;
     }
